@@ -18,43 +18,13 @@ scorePlayer2.textContent = 0;
 image.classList.add('hidden');
 
 const roleDice = function () {
-  let diceNumber = Math.trunc(Math.random() * 6) + 1;
+  const diceNumber = Math.trunc(Math.random() * 6) + 1;
   console.log(diceNumber);
-  showDiceImage(diceNumber);
+  image.classList.remove('hidden');
+  image.src = `dice-${diceNumber}.png`
 };
 
-const showDiceImage = function (diceNumber) {
-  let image = document.querySelector('.dice');
-  switch (diceNumber) {
-    case 1:
-      image.classList.remove('hidden');
-      image.src = 'dice-1.png';
-      break;
-    case 2:
-      image.classList.remove('hidden');
-      image.src = 'dice-2.png';
-      break;
-    case 3:
-      image.classList.remove('hidden');
-      image.src = 'dice-3.png';
-      break;
-    case 4:
-      image.classList.remove('hidden');
-      image.src = 'dice-4.png';
-      break;
-    case 5:
-      image.classList.remove('hidden');
-      image.src = 'dice-5.png';
-      break;
-    case 6:
-      image.classList.remove('hidden');
-      image.src = 'dice-6.png';
-      break;
-    default:
-      image.src = '';
-      image.classList.add('hidden');
-      break;
-  }
-};
 
+
+// Rolling dice Functionality
 document.querySelector('.btn--roll').addEventListener('click', roleDice);
