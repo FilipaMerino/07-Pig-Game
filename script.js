@@ -39,18 +39,20 @@ const roleDice = function () {
   } else {
     // switch player
 
+    // Reset score if rolls a 1
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+
     //Change background color on Active Player
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active');
 
-      activePlayer = activePlayer === 0 ? 1 : 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
 
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--active');
   }
-  
 };
 
 // Roll Dice when click button
