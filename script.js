@@ -31,7 +31,7 @@ const switchPlayer = function() {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
   activePlayer = activePlayer === 0 ? 1 : 0;
   changeActivePlayerBackground()
-  // currentScore = 0;
+  currentScore = 0;
 }
 
 //CHANGE BACKGROUND ON ACTIVE PLAYWER FUNCTION
