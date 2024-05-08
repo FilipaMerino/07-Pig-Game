@@ -66,11 +66,13 @@ const holdScore = function(){
   scores[activePlayer] += currentScore;
   // scores[1] = scores [1] + currentScore
   document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
-
-
-
   //2. Check if player's score is => 100;
+  if (scores[activePlayer] >= 100){
   //Finish the game
+    document.querySelector(`.player--${activePlayer}`).classList.add("player--winner");
+    document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
+}
+
 
   //3. Switch to Next player
   switchPlayer()
