@@ -68,11 +68,9 @@ const holdScore = function(){
 //2. Check if player's score is => 100;
 //Finish the game
 
-//3. Switch to Nex player
-
+//3. Switch to Next player
   activePlayer === 0 ? 1 : 0;
-
-
+  changeActivePlayerBackground()
 }
 //Clicking on Hold Button
-btnHold.addEventListener("click, holdScore")
+btnHold.addEventListener("click", holdScore)
