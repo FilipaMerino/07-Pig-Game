@@ -12,14 +12,10 @@ const player2 = document.querySelector(`.player--1`)
 let image = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
-
 const btnHold = document.querySelector('.btn--hold');
 
 const scores = [0, 0];
 let activePlayer = 0;
-
-// ______________
-
 let currentScore = 0;
 scorePlayer1.textContent = 0;
 scorePlayer2.textContent = 0;
@@ -45,22 +41,32 @@ const roleDice = function () {
     // Reset score if rolls a 1
     document.getElementById(`current--${activePlayer}`).textContent = 0;
 
-
     // switch player
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     document.getElementById(`score--${activePlayer}`).textContent = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
     player1.classList.toggle("player--active")
     player2.classList.toggle("player--active")
-
     // currentScore = 0;
-
-    //Add darker background color on Active Player
-
   }
 };
 
-
-
 // Roll Dice when click button
 document.querySelector('.btn--roll').addEventListener('click', roleDice);
+
+
+
+const holdScore = function(){
+// 1. Add current Score to active player's Score
+
+//2. Check if player's score is => 100;
+//Finish the game
+
+//3. Switch to Nex player
+
+  activePlayer === 0 ? 1 : 0;
+
+
+}
+//Clicking on Hold Button
+btnHold.addEventListener("click, holdScore")
