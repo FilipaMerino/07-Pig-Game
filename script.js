@@ -38,8 +38,15 @@ if (diceNumber !== 1){
   document.getElementById(`current--${activePlayer}`).textContent = currentScore
 } else {
   // switch player
+
+  document.querySelector(`.player--${activePlayer}`).classList.remove("player--active")
+
   activePlayer = activePlayer === 0 ? 1 : 0;
-  
+
+  document.querySelector(`.player--${activePlayer}`).classList.add("player--active")
+
+
+
 
 }
 
