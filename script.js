@@ -31,24 +31,31 @@ const roleDice = function () {
   image.classList.remove('hidden');
   image.src = `dice-${diceNumber}.png`;
 
+  activePlayer === 0
+    ? (scorePlayer1.textContent = diceNumber)
+    : (scorePlayer2.textContent = diceNumber);
+
   if (diceNumber !== 1) {
     currentScore += diceNumber;
 
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
   } else {
-    // switch player
-
     // Reset score if rolls a 1
     document.getElementById(`current--${activePlayer}`).textContent = 0;
 
-    //Change background color on Active Player
+    //Remove darker background color on Active Player
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.remove('player--active');
 
+    // switch player
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    document.getElementById(`score--${activePlayer}`).textContent = 0;
+    // currentScore = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
 
+    //Add darker background color on Active Player
     document
       .querySelector(`.player--${activePlayer}`)
       .classList.add('player--active');
