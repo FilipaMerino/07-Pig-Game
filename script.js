@@ -68,17 +68,20 @@ const holdScore = function(){
   document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer]
   //2. Check if player's score is => 100;
   if (scores[activePlayer] >= 100){
-  //Finish the game
+    //Finish the game
     document.querySelector(`.player--${activePlayer}`).classList.add("player--winner");
     document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
-}
+    image.classList.add("hidden");
+    btnHold.classList.add("hidden");
+    btnRoll.classList.add("hidden");
 
-
-  //3. Switch to Next player
-  switchPlayer()
-
+  } else {
+    //3. Switch to Next player
+    switchPlayer()
+  }
 }
 //Clicking on Hold Button
 btnHold.addEventListener("click", holdScore)
+
 // Roll Dice when click button
-document.querySelector('.btn--roll').addEventListener('click', roleDice);
+btnRoll.addEventListener('click', roleDice);
