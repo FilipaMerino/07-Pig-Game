@@ -21,6 +21,13 @@ scorePlayer1.textContent = 0;
 scorePlayer2.textContent = 0;
 image.classList.add('hidden');
 
+
+const changeActivePlayerBackground = function (){
+  player1.classList.toggle("player--active")
+  player2.classList.toggle("player--active")
+}
+
+
 //Rolling dice Functionality
 const roleDice = function () {
   const diceNumber = Math.trunc(Math.random() * 6) + 1;
@@ -45,8 +52,7 @@ const roleDice = function () {
     document.getElementById(`current--${activePlayer}`).textContent = 0;
     document.getElementById(`score--${activePlayer}`).textContent = 0;
     activePlayer = activePlayer === 0 ? 1 : 0;
-    player1.classList.toggle("player--active")
-    player2.classList.toggle("player--active")
+    changeActivePlayerBackground()
     // currentScore = 0;
   }
 };
