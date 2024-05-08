@@ -14,6 +14,9 @@ const btnRoll = document.querySelector('btn--roll');
 
 const btnHold = document.querySelector('btn--hold');
 
+const scores = [0, 0]
+let activePlayer = 0;
+
 // ______________
 
 let currentScore = 0;
@@ -31,9 +34,13 @@ const roleDice = function () {
 
 if (diceNumber !== 1){
   currentScore += diceNumber;
-  currentPlayer1.textContent = currentScore
+
+  document.getElementById(`current--${activePlayer}`).textContent = currentScore
 } else {
   // switch player
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  
+
 }
 
 
