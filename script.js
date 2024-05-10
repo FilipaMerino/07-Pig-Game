@@ -70,12 +70,10 @@ const holdScore = function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     //2. Check if player's score is => 100;
-    if (scores[activePlayer] >= 100) {
+    if (scores[activePlayer] >= 5) {
       //Finish the game
       playing = false;
-      document
-        .querySelector(`.player--${activePlayer}`)
-        .classList.add('player--winner');
+      document.querySelector(`.player--1`).classList.add('player--winner');
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
@@ -100,6 +98,13 @@ const newGame = function () {
   scorePlayer2.textContent = 0;
   //reset dice
   image.classList.add('hidden');
+  // Resetting Winner class
+  document.querySelector(`.player--0`).classList.remove('player--winner');
+  document.querySelector(`.player--1`).classList.remove('player--winner');
+  document.querySelector(`.player--0`).classList.add('player--active');
+  // Show Buttons
+
+  
 };
 
 //Clicking on Hold Button
