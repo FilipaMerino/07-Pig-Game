@@ -73,16 +73,18 @@ const holdScore = function(){
       playing = false;
       document.querySelector(`.player--${activePlayer}`).classList.add("player--winner");
       document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
-      image.classList.add("hidden");
-      btnHold.classList.add("hidden");
-      btnRoll.classList.add("hidden");
 
+        image.classList.add("hidden");
+        btnHold.classList.add("hidden");
+        btnRoll.classList.add("hidden");
     } else {
       //3. Switch to Next player
       switchPlayer()
+
     }
   }
 }
+
 //Clicking on Hold Button
 btnHold.addEventListener("click", holdScore)
 
