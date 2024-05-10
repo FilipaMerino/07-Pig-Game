@@ -89,22 +89,34 @@ const holdScore = function () {
 };
 //New Game dice Functionality
 const newGame = function () {
+
   // Reset current score
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent =
     currentScore;
+
+    
   //Reset SCORE
+  scores[0] = 0;
+  scores[1] = 0;
   scorePlayer1.textContent = 0;
   scorePlayer2.textContent = 0;
+
   //reset dice
   image.classList.add('hidden');
   // Resetting Winner class
   document.querySelector(`.player--0`).classList.remove('player--winner');
   document.querySelector(`.player--1`).classList.remove('player--winner');
   document.querySelector(`.player--0`).classList.add('player--active');
-  // Show Buttons
+  document.querySelector(`.player--1`).classList.remove('player--active');
 
-  
+  // Show Buttons
+  image.classList.remove('hidden');
+  btnHold.classList.remove('hidden');
+  btnRoll.classList.remove('hidden');
+  //Set playing to true
+  playing = true
+
 };
 
 //Clicking on Hold Button
