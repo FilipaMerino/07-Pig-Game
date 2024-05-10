@@ -92,6 +92,16 @@ const holdScore = function () {
 
 
 const newGame = function(){
+// Reset current score
+currentScore = 0;
+document.getElementById(`current--${activePlayer}`).textContent =
+        currentScore;
+//Reset SCORE
+  scorePlayer1.textContent = 0;
+  scorePlayer2.textContent = 0;
+
+console.log(scores);
+//reset dice
 
 }
 
