@@ -89,20 +89,17 @@ const holdScore = function () {
   }
 };
 
-
-
-const newGame = function(){
-// Reset current score
-currentScore = 0;
-document.getElementById(`current--${activePlayer}`).textContent =
-        currentScore;
-//Reset SCORE
+const newGame = function () {
+  // Reset current score
+  currentScore = 0;
+  document.getElementById(`current--${activePlayer}`).textContent =
+    currentScore;
+  //Reset SCORE
   scorePlayer1.textContent = 0;
   scorePlayer2.textContent = 0;
-//reset dice
-  image.classList.add("hidden")
-}
-
+  //reset dice
+  image.classList.add('hidden');
+};
 
 //Clicking on Hold Button
 btnHold.addEventListener('click', holdScore);
