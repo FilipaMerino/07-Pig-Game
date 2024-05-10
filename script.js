@@ -18,7 +18,6 @@ let scores, currentScore, activePlayer, playing;
 //STARTING CONDITIONS
 
 image.classList.add('hidden');
-
 //Create init function - with state of app
 const init = function () {
   scores = [0, 0];
