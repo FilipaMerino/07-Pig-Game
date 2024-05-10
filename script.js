@@ -99,10 +99,8 @@ document.getElementById(`current--${activePlayer}`).textContent =
 //Reset SCORE
   scorePlayer1.textContent = 0;
   scorePlayer2.textContent = 0;
-
-console.log(scores);
 //reset dice
-
+  image.classList.add("hidden")
 }
 
 
