@@ -14,14 +14,35 @@ const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
 //STARTING CONDITIONS
-const scores = [0, 0];
-let activePlayer = 0;
-let currentScore = 0;
-scorePlayer1.textContent = 0;
-scorePlayer2.textContent = 0;
-let playing = true;
 
 image.classList.add('hidden');
+
+
+//Create init function - with state of app
+const init = function() {
+
+  const scores = [0, 0];
+  let activePlayer = 0;
+  let currentScore = 0;
+  let playing = true;
+  scorePlayer1.textContent = 0;
+  scorePlayer2.textContent = 0;
+  currentPlayer1.textContent = 0;
+  currentPlayer2.textContent = 0;
+  //reset dice
+  image.classList.add('hidden');
+  // Resetting Winner class
+  player1.classList.remove('player--winner');
+  player2.classList.remove('player--winner');
+  player1.classList.add('player--active');
+  player2.classList.remove('player--active');
+  // Show Buttons
+  image.classList.add('hidden');
+  btnHold.classList.remove('hidden');
+  btnRoll.classList.remove('hidden');
+}
+
+
 
 //SWITCH PLAYER FUNCTION
 const switchPlayer = function () {
@@ -92,31 +113,7 @@ const holdScore = function () {
 };
 //New Game dice Functionality
 const newGame = function () {
-  // Reset current score
-  currentScore = 0;
-  document.getElementById(`current--${activePlayer}`).textContent =
-    currentScore;
 
-  //Reset SCORE
-  scores[0] = 0;
-  scores[1] = 0;
-  scorePlayer1.textContent = 0;
-  scorePlayer2.textContent = 0;
-
-  //reset dice
-  image.classList.add('hidden');
-  // Resetting Winner class
-  document.querySelector(`.player--0`).classList.remove('player--winner');
-  document.querySelector(`.player--1`).classList.remove('player--winner');
-  document.querySelector(`.player--0`).classList.add('player--active');
-  document.querySelector(`.player--1`).classList.remove('player--active');
-
-  // Show Buttons
-  image.classList.add('hidden');
-  btnHold.classList.remove('hidden');
-  btnRoll.classList.remove('hidden');
-  //Set playing to true
-  playing = true;
 };
 
 //Clicking on Hold Button
