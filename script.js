@@ -60,6 +60,7 @@ const roleDice = function () {
     }
   }
 };
+//Holding dice Functionality
 
 const holdScore = function () {
   if (playing) {
@@ -88,7 +89,7 @@ const holdScore = function () {
     }
   }
 };
-
+//New Game dice Functionality
 const newGame = function () {
   // Reset current score
   currentScore = 0;
