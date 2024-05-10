@@ -70,10 +70,13 @@ const holdScore = function () {
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
     //2. Check if player's score is => 100;
+
     if (scores[activePlayer] >= 5) {
       //Finish the game
       playing = false;
-      document.querySelector(`.player--1`).classList.add('player--winner');
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add('player--winner');
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove('player--active');
@@ -89,13 +92,11 @@ const holdScore = function () {
 };
 //New Game dice Functionality
 const newGame = function () {
-
   // Reset current score
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent =
     currentScore;
 
-    
   //Reset SCORE
   scores[0] = 0;
   scores[1] = 0;
@@ -111,12 +112,11 @@ const newGame = function () {
   document.querySelector(`.player--1`).classList.remove('player--active');
 
   // Show Buttons
-  image.classList.remove('hidden');
+  image.classList.add('hidden');
   btnHold.classList.remove('hidden');
   btnRoll.classList.remove('hidden');
   //Set playing to true
-  playing = true
-
+  playing = true;
 };
 
 //Clicking on Hold Button
