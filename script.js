@@ -13,18 +13,19 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
+let scores, currentScore, activePlayer, playing;
+
 //STARTING CONDITIONS
 
 image.classList.add('hidden');
 
-
 //Create init function - with state of app
-const init = function() {
+const init = function () {
+  scores = [0, 0];
+  activePlayer = 0;
+  currentScore = 0;
+  playing = true;
 
-  const scores = [0, 0];
-  let activePlayer = 0;
-  let currentScore = 0;
-  let playing = true;
   scorePlayer1.textContent = 0;
   scorePlayer2.textContent = 0;
   currentPlayer1.textContent = 0;
@@ -40,9 +41,8 @@ const init = function() {
   image.classList.add('hidden');
   btnHold.classList.remove('hidden');
   btnRoll.classList.remove('hidden');
-}
-
-
+};
+init();
 
 //SWITCH PLAYER FUNCTION
 const switchPlayer = function () {
@@ -92,7 +92,7 @@ const holdScore = function () {
       scores[activePlayer];
     //2. Check if player's score is => 100;
 
-    if (scores[activePlayer] >= 5) {
+    if (scores[activePlayer] >= 100) {
       //Finish the game
       playing = false;
       document
@@ -111,10 +111,6 @@ const holdScore = function () {
     }
   }
 };
-//New Game dice Functionality
-const newGame = function () {
-
-};
 
 //Clicking on Hold Button
 btnHold.addEventListener('click', holdScore);
@@ -123,4 +119,4 @@ btnHold.addEventListener('click', holdScore);
 btnRoll.addEventListener('click', roleDice);
 
 //Resetting the game
-btnNew.addEventListener('click', newGame);
+btnNew.addEventListener('click', init);
